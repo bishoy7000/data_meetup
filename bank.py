@@ -31,6 +31,7 @@ df= df.replace(to_replace = [' NA', 'NA', ' '], value = np.nan)
 #Ofc we first need to perform some statstical analysis to know better what to actuall replace the nulls with
 #df = df.fillna(0)
 
+#Perform Feature scalling
 
 #test the corr of the numeric cols against the products cols
 
