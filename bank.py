@@ -1,7 +1,7 @@
 import numpy as np
 import pandas as pd
 
-df = pd.read_csv('train_ver2.csv', nrows =500000, skipinitialspace=True)
+df = pd.read_csv('../train_ver2.csv', nrows =500000, skipinitialspace=True)
 #
 
 #So now we get the count of nulls of each column
@@ -22,7 +22,7 @@ x.plot.bar()
 df = df.drop(['conyuemp', 'ult_fec_cli_1t'], axis=1)
 
 #replace any missing, or corrupted values with nans(to be better suited for later replacement)
-df= df.str.strip().replace(to_replace = [' NA', 'NA', ' '], value = np.nan)
+df= df.replace(to_replace = [' NA', 'NA', ' '], value = np.nan)
 
 #Filter the data rows which have more than 75% of the features missing
 #df = df.filter(lambda x: x[::2:.isnull().sum(axis=1) <
